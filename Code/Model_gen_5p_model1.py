@@ -10,9 +10,9 @@ import numpy as np
 import itertools
 
 
-inputcard = '/Tdata/yuweili/GSM/Voon_Model1_210r_0.2'
-modeldir = '/Tdata/yuweili/GSM/Voon_model_p5_210_D0.2/'
-H = range(2291,2900,20)
+inputcard = 'WKBJ card'
+modeldir = 'DIR for synthetic waveform library'
+H = range(2291,2900,20) # Range of depth of 1D model 
 D0 = 2291
 D3 = 2891
 V0 = 7.05
