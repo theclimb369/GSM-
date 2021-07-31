@@ -19,8 +19,8 @@ startnm = 1
 nm = 10000
 w = 2
 
-dname = '/Tdata/yuweili/Adaptivestacking/Boxtest/Ba60_64_o224_232_ab'
-sname = '/Tdata/yuweili/GSM/modellib_460_D0.2/'
+dname = 'Directory for stacked data'
+sname = 'Directory for synthetic data'
 refernm = dname.split('/')[-1]
 
 os.chdir(sname)
