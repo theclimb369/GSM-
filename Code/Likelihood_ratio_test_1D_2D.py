@@ -68,37 +68,11 @@ def likelihood_ratio_1D(para, para_list, msfl):
         likelihood[j,:] = pari, Li, Ri
     return likelihood
 
-#def likelihood_ratio_2D(para1, para2, para_list1, para_list2, msfl):
-#    """
-#    Calculate 2D LR for para1, para2
-#    e.g. D1V1_L = likelihood_ratio_2D(D1, V1, D1_list, V1_list)
-#    """
-#    lglike = np.loadtxt(msfl, usecols=[1])
-#    Lo = min(lglike)  #Likelihood for optimal model
-#
-#    likelihood = np.empty((len(para_list1)*len(para_list2), 4))
-#    j = 0
-#    for par1 in para_list1:
-#        for par2 in para_list2:
-#            mask = (para1 == par1) * (para2 == par2)
-#            if len(lglike[mask]) != 0:
-#                Li = min(lglike[mask])
-#                Ri = Lo/Li
-#                #Ri = Li - Lo
-#                likelihood[j:] = par1, par2, Li, Ri
-#                j += 1
-#    return likelihood
-
-
-"""
 ###### Main Section ######
-dir = "/Tdata/yuweili/GSM"
+dir = ""
 os.chdir(dir)
 np.set_printoptions(suppress=True)
 
-#msfl = "Ba60_68_o220_228_sub_like_w1_w1" #likelihood file
-#mdfl = "modelinfo119364"  #model information file
-#msfl = "Ba60_68_o220_228_sub_like_w1_w1_all" #likelihood file
 mdfl = "modelinfoall"  #model information file
 
 # Load para list from model info file
@@ -202,8 +176,6 @@ plt.savefig("Para_Ll1D.pdf")
 plt.show()
 
 
-
-
 fig, axes = plt.subplots()
 fig.subplots_adjust(hspace=0.6,wspace=0.3)
 ax1 = plt.subplot(321)
@@ -222,7 +194,3 @@ ax5 = plt.subplot(326, sharex = ax3, sharey = ax1)
 ax5.plot(V3_L[:,0], V3_L[:,2], marker='o', markersize=3)
 ax5.set(xlabel='V3 (km)', ylabel='Lo/Lmin')
 
-
-
-
-"""
