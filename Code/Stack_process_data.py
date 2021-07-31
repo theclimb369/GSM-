@@ -5,8 +5,6 @@
 # Created by YW on May 12, 2019
 ################################################
 
-
-
 ### Read deconvolution files *.sac ###
 import numpy as np
 from obspy import read
@@ -19,11 +17,9 @@ from scipy.signal import correlate
 from obspy.signal.cross_correlation import xcorr_max
 
 
-dname = '/Tdata/yuweili/Adaptivestacking/CentralAmerica/20080903_112514'
-rdep = 560
-#dname = '/Tdata/yuweili/GSM/20110902refer'
+dname = 'Data directory'
+rdep = 560 # Depth of the event
 os.chdir(dname)
-#Decon_list = glob('/Tdata/yuweili/Adaptivestacking/20110902_134709/2011245.*.sac') + glob('/Tdata/yuweili/Adaptivestacking/20110620_163601/2011171.*.mul')
 Decon_list = glob('%s/20?????.*.sac' % dname)
 #Decon_list = glob('%s/ITD.*.sac' % dname)
 Decon_list.sort()
@@ -153,29 +149,3 @@ plt.ylim(gcarc_min, gcarc_max)
 
 plt.savefig('Stacking_%.1f_%.1f.pdf' % (gcarc_min, gcarc_max))
 #plt.show()
-
-
-
-
-## Sheng, removing the max and min value of each time point within each bin
-## Results not as good as linear stacking, some Scd features got diminished
-#      stack = np.linspace(0, 0, len(dictl[0][1]) )
-    #lst_idx_to_stack = [idxfile for (idxfile,files) in enumerate(dictl) if files[0] > gcarc_r[n] and files[0] < gcarc_r[n+1] ]
-    #print(type(stack), stack.size )
-    #for idx_t, junk in enumerate(stack):
-    #    tmp = [ dictl[idx_to_stack][1][idx_t] for idx_to_stack in lst_idx_to_stack]
-    #    if len(tmp) > 2:
-    #        value = (np.sum(tmp) - np.min(tmp) - np.max(tmp) ) / (len(tmp) - 2)
-    #    elif len(tmp) > 0:
-    #        value = np.sum(tmp) / len(tmp)
-    #    else:
-    #        value = 0.0
-    #    stack[idx_t] = value
-    #print "add file:", files[0]
-
-
-# In[ ]:
-
-
-
-
