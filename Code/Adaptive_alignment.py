@@ -15,7 +15,7 @@ import numpy as np
 model = TauPyModel('ak135')
 
 ####### readin arguments from gen_aq_YW (contain the path to data) for writing AQ file
-arg_fname = '/Tdata/yuweili/Adaptivestacking/scripts/gen_aq_YW.cmd'
+arg_fname = 'Path/gen_aq_YW.cmd'
 fid = open(arg_fname, 'r')
 print 'Arguments read from:', arg_fname
 # -- data waveform --
@@ -194,7 +194,7 @@ import subprocess
 
 os.chdir(dname)
 # os.getcwd()
-cmd = "/Tdata/yuweili/Adaptivestacking/astack/tcas"
+cmd = "Path/tcas"
 subprocess.call(cmd, shell=True)  # returns the exit code in unix
 ######### generating asi, asf under dname (data directory)#########
 
